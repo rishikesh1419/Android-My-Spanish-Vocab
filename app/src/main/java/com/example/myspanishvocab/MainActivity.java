@@ -1,22 +1,26 @@
 package com.example.myspanishvocab;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.gson.Gson;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Parcelable;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements WordAdapter.ItemClicked {
 
     RecyclerView recyclerView;
     RecyclerView.Adapter myAdapter;
@@ -35,10 +39,13 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                Intent intent = new Intent(MainActivity.this, com.example.myspanishvocab.AddWord.class);
+                startActivity(intent);
             }
         });
+
+//        Toast.makeText(this, "On Create", Toast.LENGTH_SHORT).show();
 
         recyclerView = findViewById(R.id.wordsRv);
         recyclerView.setHasFixedSize(true);
@@ -86,5 +93,17 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onItemClicked(int position) {
+//        Toast.makeText(this, "Usage: "+words.get(position).getUsage(), Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(MainActivity.this, com.example.myspanishvocab.WordDetails.class);
+
+        Gson gson = new Gson();
+        String word = gson.toJson(words.get(position));
+        intent.putExtra("details", word);
+
+        startActivity(intent);
     }
 }

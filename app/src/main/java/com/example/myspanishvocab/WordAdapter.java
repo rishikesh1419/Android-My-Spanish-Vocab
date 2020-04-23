@@ -15,16 +15,23 @@ import java.util.ArrayList;
 
 public class WordAdapter extends RecyclerView.Adapter<WordAdapter.ViewHolder> {
 
+    public interface ItemClicked {
+        void onItemClicked(int position);
+    }
+
     private ArrayList<Word> words;
+
+    ItemClicked activity;
 
     public WordAdapter(Context context, ArrayList<Word> list) {
         words = list;
+        activity = (ItemClicked) context;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView wordTv, detailsTv;
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull final View itemView) {
             super(itemView);
 
             wordTv = itemView.findViewById(R.id.wordTv);
@@ -33,7 +40,7 @@ public class WordAdapter extends RecyclerView.Adapter<WordAdapter.ViewHolder> {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    activity.onItemClicked(words.indexOf((Word) v.getTag()));
                 }
             });
         }
