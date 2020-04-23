@@ -7,12 +7,22 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+
+    RecyclerView recyclerView;
+    RecyclerView.Adapter myAdapter;
+    RecyclerView.LayoutManager layoutManager;
+
+    ArrayList<Word> words;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +39,31 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        recyclerView = findViewById(R.id.wordsRv);
+        recyclerView.setHasFixedSize(true);
+
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+
+        words = new ArrayList<Word>();
+        words.add(new Word("grande","Adjective","","Big, Huge","Tu casa es grande.","grande"));
+        words.add(new Word("el","Pronoun","","he","El tiene una casa.","el"));
+        words.add(new Word("casa","Noun","feminine","house","Ella tiene una casa.","casa"));
+        words.add(new Word("grande","Adjective","","Big, Huge","Tu casa es grande.","grande"));
+        words.add(new Word("el","Pronoun","","he","El tiene una casa.","el"));
+        words.add(new Word("grande","Adjective","","Big, Huge","Tu casa es grande.","grande"));
+        words.add(new Word("el","Pronoun","","he","El tiene una casa.","el"));
+        words.add(new Word("grande","Adjective","","Big, Huge","Tu casa es grande.","grande"));
+        words.add(new Word("el","Pronoun","","he","El tiene una casa.","el"));
+        words.add(new Word("grande","Adjective","","Big, Huge","Tu casa es grande.","grande"));
+        words.add(new Word("el","Pronoun","","he","El tiene una casa.","el"));
+        words.add(new Word("grande","Adjective","","Big, Huge","Tu casa es grande.","grande"));
+        words.add(new Word("el","Pronoun","","he","El tiene una casa.","el"));
+
+        myAdapter = new WordAdapter(this, words);
+
+        recyclerView.setAdapter(myAdapter);
     }
 
     @Override
