@@ -1,12 +1,27 @@
 package com.example.myspanishvocab;
 
 public class Word {
+    private int id;
     private String word;
     private String pos;
     private String gender;
     private String meaning;
     private String usage;
     private String norm;
+
+    public Word() {
+
+    }
+
+    public Word(int id, String word, String pos, String gender, String meaning, String usage, String norm) {
+        this.id = id;
+        this.word = word;
+        this.pos = pos;
+        this.gender = gender;
+        this.meaning = meaning;
+        this.usage = usage;
+        this.norm = norm;
+    }
 
     public Word(String word, String pos, String gender, String meaning, String usage, String norm) {
         this.word = word;
@@ -16,6 +31,16 @@ public class Word {
         this.usage = usage;
         this.norm = norm;
     }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
 
     public String getWord() {
         return word;
