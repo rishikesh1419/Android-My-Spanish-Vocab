@@ -40,7 +40,7 @@ public class WordAdapter extends RecyclerView.Adapter<WordAdapter.ViewHolder> {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    activity.onItemClicked(words.indexOf((Word) v.getTag()));
+                    activity.onItemClicked(words.indexOf(v.getTag()));
                 }
             });
         }

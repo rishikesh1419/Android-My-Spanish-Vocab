@@ -9,6 +9,8 @@
         card_view:cardBackgroundColor="#FFFFFF"
         card_view:cardCornerRadius="5dp"
         card_view:cardElevation="5dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
         android:layout_margin="7dp"
         card_view:cardUseCompatPadding="false"
         android:layout_width="match_parent"
