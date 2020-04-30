@@ -12,7 +12,7 @@
         android:id="@+id/wordTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Casa"
+        android:text="casa"
         android:textAlignment="center"
         android:textSize="48sp" />
 
@@ -43,7 +43,7 @@
         android:id="@+id/meaningTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="House"
+        android:text="house, home"
         android:textAlignment="center"
         android:textSize="28sp" />
 

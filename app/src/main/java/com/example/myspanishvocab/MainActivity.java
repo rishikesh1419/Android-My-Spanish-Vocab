@@ -1,5 +1,6 @@
 package com.example.myspanishvocab;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -19,14 +20,18 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements WordAdapter.ItemClicked {
+
+    Context context;
+    DBHandler dbHandler;
 
     RecyclerView recyclerView;
     RecyclerView.Adapter myAdapter;
     RecyclerView.LayoutManager layoutManager;
 
-    ArrayList<Word> words;
+    List<Word> words;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +39,9 @@ public class MainActivity extends AppCompatActivity implements WordAdapter.ItemC
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        context = this;
+        dbHandler = new DBHandler(context);
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -54,21 +62,23 @@ public class MainActivity extends AppCompatActivity implements WordAdapter.ItemC
         recyclerView.setLayoutManager(layoutManager);
 
         words = new ArrayList<Word>();
-        words.add(new Word("grande","Adjective","","Big, Huge","Tu casa es grande.","grande"));
-        words.add(new Word("el","Pronoun","","he","El tiene una casa.","el"));
-        words.add(new Word("casa","Noun","feminine","house","Ella tiene una casa.","casa"));
-        words.add(new Word("grande","Adjective","","Big, Huge","Tu casa es grande.","grande"));
-        words.add(new Word("el","Pronoun","","he","El tiene una casa.","el"));
-        words.add(new Word("grande","Adjective","","Big, Huge","Tu casa es grande.","grande"));
-        words.add(new Word("el","Pronoun","","he","El tiene una casa.","el"));
-        words.add(new Word("grande","Adjective","","Big, Huge","Tu casa es grande.","grande"));
-        words.add(new Word("el","Pronoun","","he","El tiene una casa.","el"));
-        words.add(new Word("grande","Adjective","","Big, Huge","Tu casa es grande.","grande"));
-        words.add(new Word("el","Pronoun","","he","El tiene una casa.","el"));
-        words.add(new Word("grande","Adjective","","Big, Huge","Tu casa es grande.","grande"));
-        words.add(new Word("el","Pronoun","","he","El tiene una casa.","el"));
+        words = dbHandler.getAllWords();
+        Toast.makeText(MainActivity.this, String.valueOf(words.size()), Toast.LENGTH_SHORT).show();
+//        words.add(new Word("grande","Adjective","","Big, Huge","Tu casa es grande.","grande"));
+//        words.add(new Word("el","Pronoun","","he","El tiene una casa.","el"));
+//        words.add(new Word("casa","Noun","feminine","house","Ella tiene una casa.","casa"));
+//        words.add(new Word("grande","Adjective","","Big, Huge","Tu casa es grande.","grande"));
+//        words.add(new Word("el","Pronoun","","he","El tiene una casa.","el"));
+//        words.add(new Word("grande","Adjective","","Big, Huge","Tu casa es grande.","grande"));
+//        words.add(new Word("el","Pronoun","","he","El tiene una casa.","el"));
+//        words.add(new Word("grande","Adjective","","Big, Huge","Tu casa es grande.","grande"));
+//        words.add(new Word("el","Pronoun","","he","El tiene una casa.","el"));
+//        words.add(new Word("grande","Adjective","","Big, Huge","Tu casa es grande.","grande"));
+//        words.add(new Word("el","Pronoun","","he","El tiene una casa.","el"));
+//        words.add(new Word("grande","Adjective","","Big, Huge","Tu casa es grande.","grande"));
+//        words.add(new Word("el","Pronoun","","he","El tiene una casa.","el"));
 
-        myAdapter = new WordAdapter(this, words);
+        myAdapter = new WordAdapter(this, (ArrayList<Word>) words);
 
         recyclerView.setAdapter(myAdapter);
     }

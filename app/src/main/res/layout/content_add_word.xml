@@ -4,6 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:paddingLeft="8dp"
+    android:paddingTop="7dp"
+    android:paddingRight="8dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <ScrollView
@@ -20,263 +23,284 @@
                 android:id="@+id/wordEt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Word"
-                android:background="@drawable/et_style"
-                android:padding="5dp"
                 android:layout_margin="5dp"
-                android:inputType="textPersonName"
-                android:textSize="20sp"
-                />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:background="@drawable/et_style"
-                android:padding="5dp"
-                android:layout_margin="5dp" >
+                android:hint="Word"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp"
+                android:textSize="20sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:weightSum="2">
+                android:layout_margin="5dp"
+                android:background="@drawable/et_style"
+                android:orientation="vertical"
+                android:padding="5dp">
 
-                <RadioGroup
-                    android:id="@+id/rg1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <RadioButton
-                        android:id="@+id/adjectiveRb"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="14dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="7dp"
-                        android:background="@drawable/custom_button_bg"
-                        android:button="@android:color/transparent"
-                        android:gravity="center_horizontal"
-                        android:paddingTop="3dp"
-                        android:paddingBottom="3dp"
-                        android:text="Adjective"
-                        android:textColor="#8A000000"
-                        android:textSize="20sp" />
-
-                    <RadioButton
-                        android:id="@+id/articleRb"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="14dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="7dp"
-                        android:background="@drawable/custom_button_bg"
-                        android:button="@android:color/transparent"
-                        android:gravity="center_horizontal"
-                        android:paddingTop="3dp"
-                        android:paddingBottom="3dp"
-                        android:text="Article"
-                        android:textColor="#8A000000"
-                        android:textSize="20sp" />
-
-                    <RadioButton
-                        android:id="@+id/adverbRb"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="14dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="7dp"
-                        android:background="@drawable/custom_button_bg"
-                        android:button="@android:color/transparent"
-                        android:gravity="center_horizontal"
-                        android:paddingTop="3dp"
-                        android:paddingBottom="3dp"
-                        android:text="Adverb"
-                        android:textColor="#8A000000"
-                        android:textSize="20sp" />
-
-                    <RadioButton
-                        android:id="@+id/conjunctionRb"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="14dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="7dp"
-                        android:background="@drawable/custom_button_bg"
-                        android:button="@android:color/transparent"
-                        android:gravity="center_horizontal"
-                        android:paddingTop="3dp"
-                        android:paddingBottom="3dp"
-                        android:text="Conjunction"
-                        android:textColor="#8A000000"
-                        android:textSize="20sp" />
-
-                </RadioGroup>
-
-
-                <RadioGroup
-                    android:id="@+id/rg2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <RadioButton
-                        android:id="@+id/verbRb"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="7dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="14dp"
-                        android:background="@drawable/custom_button_bg"
-                        android:button="@android:color/transparent"
-                        android:gravity="center_horizontal"
-                        android:paddingTop="3dp"
-                        android:paddingBottom="3dp"
-                        android:text="Verb"
-                        android:textColor="#8A000000"
-                        android:textSize="20sp" />
-
-                    <RadioButton
-                        android:id="@+id/pronounRb"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="7dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="14dp"
-                        android:background="@drawable/custom_button_bg"
-                        android:button="@android:color/transparent"
-                        android:gravity="center_horizontal"
-                        android:paddingTop="3dp"
-                        android:paddingBottom="3dp"
-                        android:text="Pronoun"
-                        android:textColor="#8A000000"
-                        android:textSize="20sp" />
-
-                    <RadioButton
-                        android:id="@+id/prepositionRb"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="7dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="14dp"
-                        android:background="@drawable/custom_button_bg"
-                        android:button="@android:color/transparent"
-                        android:gravity="center_horizontal"
-                        android:paddingTop="3dp"
-                        android:paddingBottom="3dp"
-                        android:text="Preposition"
-                        android:textColor="#8A000000"
-                        android:textSize="20sp" />
-
-                    <RadioButton
-                        android:id="@+id/interjectionRb"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="7dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="14dp"
-                        android:background="@drawable/custom_button_bg"
-                        android:button="@android:color/transparent"
-                        android:gravity="center_horizontal"
-                        android:paddingTop="3dp"
-                        android:paddingBottom="3dp"
-                        android:text="Interjection"
-                        android:textColor="#8A000000"
-                        android:textSize="20sp" />
-
-                </RadioGroup>
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal">
-
-                <RadioButton
-                    android:id="@+id/nounRb"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/custom_button_bg"
-                    android:button="@android:color/transparent"
-                    android:paddingStart="35dp"
-                    android:paddingTop="3dp"
-                    android:paddingEnd="35dp"
-                    android:paddingBottom="3dp"
-                    android:text="Noun"
-                    android:textColor="@android:color/secondary_text_dark"
-                    android:textSize="20sp" />
-            </LinearLayout>
+                    android:weightSum="2">
 
-            <RadioGroup
-                android:id="@+id/genderRg"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal"
-                android:weightSum="2"
-                android:paddingBottom="5dp">
+                    <RadioGroup
+                        android:id="@+id/rg1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
-                <RadioButton
-                    android:id="@+id/muscularRb"
+                        <RadioButton
+                            android:id="@+id/adjectiveRb"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="7dp"
+                            android:background="@drawable/custom_button_bg"
+                            android:button="@android:color/transparent"
+                            android:gravity="center_horizontal"
+                            android:paddingTop="3dp"
+                            android:paddingBottom="3dp"
+                            android:text="Adjective"
+                            android:textColor="#8A000000"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/articleRb"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="7dp"
+                            android:background="@drawable/custom_button_bg"
+                            android:button="@android:color/transparent"
+                            android:gravity="center_horizontal"
+                            android:paddingTop="3dp"
+                            android:paddingBottom="3dp"
+                            android:text="Article"
+                            android:textColor="#8A000000"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/adverbRb"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="7dp"
+                            android:background="@drawable/custom_button_bg"
+                            android:button="@android:color/transparent"
+                            android:gravity="center_horizontal"
+                            android:paddingTop="3dp"
+                            android:paddingBottom="3dp"
+                            android:text="Adverb"
+                            android:textColor="#8A000000"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/conjunctionRb"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="7dp"
+                            android:background="@drawable/custom_button_bg"
+                            android:button="@android:color/transparent"
+                            android:gravity="center_horizontal"
+                            android:paddingTop="3dp"
+                            android:paddingBottom="3dp"
+                            android:text="Conjunction"
+                            android:textColor="#8A000000"
+                            android:textSize="20sp" />
+
+                    </RadioGroup>
+
+
+                    <RadioGroup
+                        android:id="@+id/rg2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/verbRb"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="14dp"
+                            android:background="@drawable/custom_button_bg"
+                            android:button="@android:color/transparent"
+                            android:gravity="center_horizontal"
+                            android:paddingTop="3dp"
+                            android:paddingBottom="3dp"
+                            android:text="Verb"
+                            android:textColor="#8A000000"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/pronounRb"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="14dp"
+                            android:background="@drawable/custom_button_bg"
+                            android:button="@android:color/transparent"
+                            android:gravity="center_horizontal"
+                            android:paddingTop="3dp"
+                            android:paddingBottom="3dp"
+                            android:text="Pronoun"
+                            android:textColor="#8A000000"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/prepositionRb"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="14dp"
+                            android:background="@drawable/custom_button_bg"
+                            android:button="@android:color/transparent"
+                            android:gravity="center_horizontal"
+                            android:paddingTop="3dp"
+                            android:paddingBottom="3dp"
+                            android:text="Preposition"
+                            android:textColor="#8A000000"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/interjectionRb"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="14dp"
+                            android:background="@drawable/custom_button_bg"
+                            android:button="@android:color/transparent"
+                            android:gravity="center_horizontal"
+                            android:paddingTop="3dp"
+                            android:paddingBottom="3dp"
+                            android:text="Interjection"
+                            android:textColor="#8A000000"
+                            android:textSize="20sp" />
+
+                    </RadioGroup>
+                </LinearLayout>
+
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="14dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="7dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/custom_button_bg"
-                    android:button="@android:color/transparent"
-                    android:enabled="false"
-                    android:gravity="center_horizontal"
-                    android:paddingTop="3dp"
-                    android:paddingBottom="3dp"
-                    android:text="Muscular"
-                    android:textSize="20sp" />
+                    android:layout_gravity="center_horizontal">
 
-                <RadioButton
-                    android:id="@+id/feminineRb"
-                    android:layout_width="wrap_content"
+                    <RadioGroup
+                        android:id="@+id/rg3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/nounRb"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/custom_button_bg"
+                            android:button="@android:color/transparent"
+                            android:paddingStart="35dp"
+                            android:paddingTop="3dp"
+                            android:paddingEnd="35dp"
+                            android:paddingBottom="3dp"
+                            android:text="Noun"
+                            android:textColor="#8A000000"
+                            android:textSize="20sp" />
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <RadioGroup
+                    android:id="@+id/genderRg"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="7dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="14dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/custom_button_bg"
-                    android:button="@android:color/transparent"
-                    android:enabled="false"
                     android:gravity="center_horizontal"
-                    android:paddingTop="3dp"
-                    android:paddingBottom="3dp"
-                    android:text="Feminine"
-                    android:textSize="20sp" />
-            </RadioGroup>
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:weightSum="2">
+
+                    <RadioButton
+                        android:id="@+id/masculineRb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="7dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/custom_button_bg"
+                        android:button="@android:color/transparent"
+                        android:enabled="false"
+                        android:gravity="center_horizontal"
+                        android:paddingTop="3dp"
+                        android:paddingBottom="3dp"
+                        android:text="Masculine"
+                        android:textColor="#B6B6B6"
+                        android:textSize="20sp" />
+
+                    <RadioButton
+                        android:id="@+id/feminineRb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="14dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/custom_button_bg"
+                        android:button="@android:color/transparent"
+                        android:enabled="false"
+                        android:gravity="center_horizontal"
+                        android:paddingTop="3dp"
+                        android:paddingBottom="3dp"
+                        android:text="Feminine"
+                        android:textColor="#B6B6B6"
+                        android:textSize="20sp" />
+                </RadioGroup>
             </LinearLayout>
+
             <EditText
                 android:id="@+id/meaningEt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Meaning"
-                android:inputType="textPersonName"
-                android:background="@drawable/et_style"
-                android:padding="5dp"
                 android:layout_margin="5dp"
+                android:background="@drawable/et_style"
+                android:hint="Meaning"
+                android:inputType="textMultiLine"
+                android:maxLines="3"
+                android:minLines="2"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp"
+                android:scrollbars="vertical"
                 android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/usageEt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/et_style"
                 android:hint="Usage"
-                android:inputType="textMultiLine"
+                android:inputType="textMultiLine|textCapSentences"
                 android:maxLines="3"
                 android:minLines="2"
-                android:background="@drawable/et_style"
-                android:padding="5dp"
-                android:layout_margin="5dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp"
                 android:scrollbars="vertical"
                 android:textSize="20sp" />
 

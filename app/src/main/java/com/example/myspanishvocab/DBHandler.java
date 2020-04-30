@@ -8,12 +8,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class DBHandler extends SQLiteOpenHelper {
 
-    private static  final int VERSION = 1;
+    private static  final int VERSION = 4;
 
     private static final String DB_NAME = "WordsDB";
 
@@ -33,7 +35,7 @@ public class DBHandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String CREATE_WORDS_TABLE = "CREATE TABLE " + WORDS_TABLE
-                + "(" + ID + " int PRIMARY KEY,"
+                + "(" + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + WORD + " TEXT, "
                 + POS + " TEXT, "
                 + GENDER + " TEXT, "
@@ -55,7 +57,6 @@ public class DBHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(ID, word.getId());
         values.put(WORD, word.getWord());
         values.put(POS, word.getPos());
         values.put(GENDER, word.getGender());
@@ -100,7 +101,40 @@ public class DBHandler extends SQLiteOpenHelper {
     public List<Word> getAllWords() {
         SQLiteDatabase db = getReadableDatabase();
         List<Word> words = new ArrayList<>();
-        String query = "SELECT * FROM " + WORDS_TABLE;
+        String query = "SELECT * FROM " + WORDS_TABLE + " ORDER BY " + WORD;
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        if(cursor.moveToFirst()){
+            do {
+                Word word = new Word();
+
+                word.setId(Integer.parseInt(cursor.getString(0)));
+                word.setWord(cursor.getString(1));
+                word.setPos(cursor.getString(2));
+                word.setGender(cursor.getString(3));
+                word.setMeaning(cursor.getString(4));
+                word.setUsage(cursor.getString(5));
+                word.setNorm(cursor.getString(6));
+
+                words.add(word);
+            }
+            while(cursor.moveToNext());
+        }
+
+        return words;
+    }
+
+    public List<Word> searchWords(String key) {
+        Pattern pattern = Pattern.compile("\\p{InCombiningDiacriticalMarks}+");
+        String norm = pattern.matcher(Normalizer.normalize(key, Normalizer.Form.NFD)).replaceAll("");
+
+        SQLiteDatabase db = getReadableDatabase();
+        List<Word> words = new ArrayList<>();
+        String query = "SELECT * FROM " + WORDS_TABLE
+                + " WHERE " + NORM + " LIKE " + norm
+                + " OR " + MEANING + " LIKE " + norm
+                + " ORDER BY " + WORD;
 
         Cursor cursor = db.rawQuery(query, null);
 
