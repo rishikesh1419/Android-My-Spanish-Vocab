@@ -89,4 +89,17 @@ public class Word {
     public void setNorm(String norm) {
         this.norm = norm;
     }
+
+    @Override
+    public String toString() {
+        return "Word{" +
+                "id=" + id +
+                ", word='" + word + '\'' +
+                ", pos='" + pos + '\'' +
+                ", gender='" + gender + '\'' +
+                ", meaning='" + meaning + '\'' +
+                ", usage='" + usage + '\'' +
+                ", norm='" + norm + '\'' +
+                '}';
+    }
 }

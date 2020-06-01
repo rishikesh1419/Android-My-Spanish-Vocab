@@ -198,7 +198,8 @@ public class AddWord extends AppCompatActivity {
 
                             dbHandler.addWord(newWord);
                             Toast.makeText(AddWord.this, "New word added", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(context, MainActivity.class));
+//                            startActivity(new Intent(context, MainActivity.class));
+                            finish();
                         }
                     }
                 }

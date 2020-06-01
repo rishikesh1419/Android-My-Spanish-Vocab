@@ -53,8 +53,6 @@ public class MainActivity extends AppCompatActivity implements WordAdapter.ItemC
             }
         });
 
-//        Toast.makeText(this, "On Create", Toast.LENGTH_SHORT).show();
-
         recyclerView = findViewById(R.id.wordsRv);
         recyclerView.setHasFixedSize(true);
 
@@ -63,20 +61,7 @@ public class MainActivity extends AppCompatActivity implements WordAdapter.ItemC
 
         words = new ArrayList<Word>();
         words = dbHandler.getAllWords();
-        Toast.makeText(MainActivity.this, String.valueOf(words.size()), Toast.LENGTH_SHORT).show();
-//        words.add(new Word("grande","Adjective","","Big, Huge","Tu casa es grande.","grande"));
-//        words.add(new Word("el","Pronoun","","he","El tiene una casa.","el"));
-//        words.add(new Word("casa","Noun","feminine","house","Ella tiene una casa.","casa"));
-//        words.add(new Word("grande","Adjective","","Big, Huge","Tu casa es grande.","grande"));
-//        words.add(new Word("el","Pronoun","","he","El tiene una casa.","el"));
-//        words.add(new Word("grande","Adjective","","Big, Huge","Tu casa es grande.","grande"));
-//        words.add(new Word("el","Pronoun","","he","El tiene una casa.","el"));
-//        words.add(new Word("grande","Adjective","","Big, Huge","Tu casa es grande.","grande"));
-//        words.add(new Word("el","Pronoun","","he","El tiene una casa.","el"));
-//        words.add(new Word("grande","Adjective","","Big, Huge","Tu casa es grande.","grande"));
-//        words.add(new Word("el","Pronoun","","he","El tiene una casa.","el"));
-//        words.add(new Word("grande","Adjective","","Big, Huge","Tu casa es grande.","grande"));
-//        words.add(new Word("el","Pronoun","","he","El tiene una casa.","el"));
+//        Toast.makeText(MainActivity.this, String.valueOf(words.size()), Toast.LENGTH_SHORT).show();
 
         myAdapter = new WordAdapter(this, (ArrayList<Word>) words);
 
@@ -106,6 +91,18 @@ public class MainActivity extends AppCompatActivity implements WordAdapter.ItemC
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+
+        words.clear();
+        words = dbHandler.getAllWords();
+
+        myAdapter = new WordAdapter(this, (ArrayList<Word>) words);
+
+        recyclerView.setAdapter(myAdapter);
+    }
+
+    @Override
     public void onItemClicked(int position) {
 //        Toast.makeText(this, "Usage: "+words.get(position).getUsage(), Toast.LENGTH_LONG).show();
         Intent intent = new Intent(MainActivity.this, com.example.myspanishvocab.WordDetails.class);
@@ -113,7 +110,6 @@ public class MainActivity extends AppCompatActivity implements WordAdapter.ItemC
         Gson gson = new Gson();
         String word = gson.toJson(words.get(position));
         intent.putExtra("details", word);
-
         startActivity(intent);
     }
 }

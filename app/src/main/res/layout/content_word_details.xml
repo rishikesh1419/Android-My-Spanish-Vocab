@@ -12,7 +12,7 @@
         android:id="@+id/wordTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="casa"
+        android:text=""
         android:textAlignment="center"
         android:textSize="48sp" />
 

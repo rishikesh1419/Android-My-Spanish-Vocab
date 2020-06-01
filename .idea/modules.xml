@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/My Spanish Vocab.iml" filepath="$PROJECT_DIR$/My Spanish Vocab.iml" group="My Spanish Vocab" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/My_Spanish_Vocab.iml" filepath="$PROJECT_DIR$/.idea/modules/My_Spanish_Vocab.iml" group="My_Spanish_Vocab" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="My Spanish Vocab/app" />
     </modules>
   </component>
