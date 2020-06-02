@@ -40,7 +40,6 @@ public class WordDetails extends AppCompatActivity {
 
         Intent intent = getIntent();
         String details = intent.getStringExtra("details");
-//        id = intent.getIntExtra("id", 0);
         Gson gson = new Gson();
         word = gson.fromJson(details, Word.class);
 
@@ -78,7 +77,6 @@ public class WordDetails extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-//        int id = getIntent().getIntExtra("id", 0);
         id = word.getId();
 
         word = dbHandler.getWord(id);

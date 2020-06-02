@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.text.TextUtils;
+import android.text.style.TtsSpan;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -29,6 +30,7 @@ public class EditWord extends AppCompatActivity {
     EditText wordEt, meaningEt, usageEt;
     RadioGroup rg1, rg2, rg3, genderRg;
     RadioButton typeBtn, masculineBtn, feminineBtn, genderBtn;
+    RadioButton verbRb, adjectiveRb, nounRb, conjunctionRb, articleRb, pronounRb, adverbRb, prepositionRb, interjectionRb;
     Word edWord;
 
     private RadioGroup.OnCheckedChangeListener listener1 = new RadioGroup.OnCheckedChangeListener() {
@@ -48,7 +50,6 @@ public class EditWord extends AppCompatActivity {
                 feminineBtn.setTextColor(Color.parseColor("#B6B6B6"));
                 masculineBtn.setEnabled(false);
                 feminineBtn.setEnabled(false);
-//                genderRg.setOnCheckedChangeListener(listener4);
                 int selectedId = rg1.getCheckedRadioButtonId();
                 typeBtn = findViewById(selectedId);
             }
@@ -72,7 +73,6 @@ public class EditWord extends AppCompatActivity {
                 feminineBtn.setTextColor(Color.parseColor("#B6B6B6"));
                 masculineBtn.setEnabled(false);
                 feminineBtn.setEnabled(false);
-//                genderRg.setOnCheckedChangeListener(listener4);
                 int selectedId = rg2.getCheckedRadioButtonId();
                 typeBtn = findViewById(selectedId);
             }
@@ -94,7 +94,6 @@ public class EditWord extends AppCompatActivity {
                 genderRg.setOnCheckedChangeListener(listener4);
                 int selectedId = rg3.getCheckedRadioButtonId();
                 typeBtn = findViewById(selectedId);
-//                Toast.makeText(AddWord.this, typeBtn.getText().toString(), Toast.LENGTH_SHORT).show();
                 masculineBtn.setEnabled(true);
                 feminineBtn.setEnabled(true);
                 masculineBtn.setTextColor(Color.parseColor("#8A000000"));
@@ -113,16 +112,8 @@ public class EditWord extends AppCompatActivity {
                 rg1.setOnCheckedChangeListener(null);
                 rg1.clearCheck();
                 rg1.setOnCheckedChangeListener(listener1);
-//                int selectedId = rg3.getCheckedRadioButtonId();
-//                typeBtn = findViewById(selectedId);
-//                masculineBtn.setEnabled(true);
-//                feminineBtn.setEnabled(true);
-//                masculineBtn.setTextColor(Color.parseColor("#8A000000"));
-//                feminineBtn.setTextColor(Color.parseColor("#8A000000"));
-//                Toast.makeText(AddWord.this, "L4", Toast.LENGTH_SHORT).show();
                 int selectedGender = genderRg.getCheckedRadioButtonId();
                 genderBtn = findViewById(selectedGender);
-//                Toast.makeText(AddWord.this, genderBtn.getText().toString(), Toast.LENGTH_SHORT).show();
             }
         }
     };
@@ -158,9 +149,64 @@ public class EditWord extends AppCompatActivity {
         masculineBtn = findViewById(R.id.masculineRb);
         feminineBtn = findViewById(R.id.feminineRb);
 
+        adjectiveRb = findViewById(R.id.adjectiveRb);
+        verbRb = findViewById(R.id.verbRb);
+        adverbRb = findViewById(R.id.adverbRb);
+        articleRb = findViewById(R.id.articleRb);
+        prepositionRb = findViewById(R.id.prepositionRb);
+        pronounRb = findViewById(R.id.pronounRb);
+        interjectionRb = findViewById(R.id.interjectionRb);
+        conjunctionRb = findViewById(R.id.conjunctionRb);
+        nounRb = findViewById(R.id.nounRb);
+
         wordEt = findViewById(R.id.wordEt);
         meaningEt = findViewById(R.id.meaningEt);
         usageEt = findViewById(R.id.usageEt);
+
+        wordEt.setText(edWord.getWord());
+        meaningEt.setText(edWord.getMeaning());
+        usageEt.setText(edWord.getUsage());
+
+        String ogPos = edWord.getPos();
+
+        if(ogPos.equals("Noun")) {
+            nounRb.toggle();
+            if(edWord.getGender().equals("Masculine")) {
+                masculineBtn.toggle();
+            }
+            else {
+                feminineBtn.toggle();
+            }
+        }
+        else {
+            switch(ogPos)
+            {
+                case "Adjective" :
+                    adjectiveRb.toggle();
+                    break;
+                case "Adverb" :
+                    adverbRb.toggle();
+                    break;
+                case "Pronoun" :
+                    pronounRb.toggle();
+                    break;
+                case "Article" :
+                    articleRb.toggle();
+                    break;
+                case "Preposition" :
+                    prepositionRb.toggle();
+                    break;
+                case "Interjection" :
+                    interjectionRb.toggle();
+                    break;
+                case "Conjunction" :
+                    conjunctionRb.toggle();
+                    break;
+                case "Verb" :
+                    verbRb.toggle();
+                    break;
+            }
+        }
 
         FloatingActionButton fabSave = findViewById(R.id.fabSave);
         fabSave.setOnClickListener(new View.OnClickListener() {
@@ -184,7 +230,6 @@ public class EditWord extends AppCompatActivity {
                         if (typeBtn.getText().toString().equals("Noun") && genderBtn == null) {
                             Toast.makeText(EditWord.this, "Select a gender", Toast.LENGTH_SHORT).show();
                         } else {
-//                            Toast.makeText(AddWord.this, norm, Toast.LENGTH_SHORT).show();
                             pos = typeBtn.getText().toString();
                             if (pos.equals("Noun")) {
                                 gender = genderBtn.getText().toString();
@@ -192,14 +237,7 @@ public class EditWord extends AppCompatActivity {
                             else {
                                 gender = "None";
                             }
-//                            Word newWord = new Word(
-//                                    word,
-//                                    pos,
-//                                    gender,
-//                                    meaning,
-//                                    usage,
-//                                    norm
-//                            );
+
                             edWord.setWord(word);
                             edWord.setGender(gender);
                             edWord.setPos(pos);
@@ -210,13 +248,10 @@ public class EditWord extends AppCompatActivity {
                             dbHandler.updateWord(edWord);
 
                             Toast.makeText(EditWord.this, "Word edited", Toast.LENGTH_SHORT).show();
-//                            startActivity(new Intent(context, MainActivity.class));
                             finish();
                         }
                     }
                 }
-
-
             }
         });
     }

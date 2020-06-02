@@ -104,13 +104,11 @@ public class MainActivity extends AppCompatActivity implements WordAdapter.ItemC
 
     @Override
     public void onItemClicked(int position) {
-//        Toast.makeText(this, "Usage: "+words.get(position).getUsage(), Toast.LENGTH_LONG).show();
         Intent intent = new Intent(MainActivity.this, com.example.myspanishvocab.WordDetails.class);
 
         Gson gson = new Gson();
         String word = gson.toJson(words.get(position));
         intent.putExtra("details", word);
-//        intent.putExtra("id", position);
         startActivity(intent);
     }
 }

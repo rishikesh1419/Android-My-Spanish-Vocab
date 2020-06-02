@@ -10,20 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b31df53d-46e8-4919-8c2a-26d18bad9b5e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myspanishvocab/DBHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myspanishvocab/DBHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myspanishvocab/EditWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myspanishvocab/EditWord.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myspanishvocab/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myspanishvocab/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myspanishvocab/WordDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myspanishvocab/WordDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_edit_word.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_edit_word.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="AVD1" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -179,9 +177,29 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="406" y="100" width="544" height="592" key="#com.intellij.ide.util.MemberChooser/0.27.1366.741@0.27.1366.741" timestamp="1591082290509" />
-    <state x="339" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1591081019750">
+    <state width="1320" height="97" key="GridCell.Tab.0.bottom" timestamp="1591092909304">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="339" y="224" key="com.intellij.ide.util.TipDialog/0.27.1366.741@0.27.1366.741" timestamp="1591081019750" />
+    <state width="1320" height="97" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1591092909304" />
+    <state width="1320" height="97" key="GridCell.Tab.0.center" timestamp="1591092909304">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="97" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1591092909304" />
+    <state width="1320" height="97" key="GridCell.Tab.0.left" timestamp="1591092909303">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="97" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1591092909303" />
+    <state width="1320" height="97" key="GridCell.Tab.0.right" timestamp="1591092909304">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="97" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1591092909304" />
+    <state x="100" y="125" width="1166" height="543" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1591110321118">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="100" y="125" width="1166" height="543" key="com.android.tools.idea.avdmanager.AvdListDialog/0.27.1366.741@0.27.1366.741" timestamp="1591110321118" />
+    <state x="339" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1591102362155">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="339" y="224" key="com.intellij.ide.util.TipDialog/0.27.1366.741@0.27.1366.741" timestamp="1591102362155" />
   </component>
 </project>
