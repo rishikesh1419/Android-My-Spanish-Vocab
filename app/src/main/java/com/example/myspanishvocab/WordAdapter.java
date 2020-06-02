@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class WordAdapter extends RecyclerView.Adapter<WordAdapter.ViewHolder> {
 
@@ -68,5 +69,10 @@ public class WordAdapter extends RecyclerView.Adapter<WordAdapter.ViewHolder> {
     @Override
     public int getItemCount() {
         return words.size();
+    }
+
+    public void listChanged(List<Word> updWords) {
+        words = (ArrayList<Word>) updWords;
+        notifyDataSetChanged();
     }
 }

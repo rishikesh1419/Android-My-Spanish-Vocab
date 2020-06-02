@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:background="@drawable/et_style"
-                android:hint="Word"
+                android:hint="@string/word"
                 android:inputType="textPersonName"
                 android:paddingLeft="10dp"
                 android:paddingTop="5dp"
@@ -62,7 +62,7 @@
                             android:gravity="center_horizontal"
                             android:paddingTop="3dp"
                             android:paddingBottom="3dp"
-                            android:text="Adjective"
+                            android:text="@string/adjective"
                             android:textColor="#8A000000"
                             android:textSize="20sp" />
 
@@ -78,7 +78,7 @@
                             android:gravity="center_horizontal"
                             android:paddingTop="3dp"
                             android:paddingBottom="3dp"
-                            android:text="Article"
+                            android:text="@string/article"
                             android:textColor="#8A000000"
                             android:textSize="20sp" />
 
@@ -94,7 +94,7 @@
                             android:gravity="center_horizontal"
                             android:paddingTop="3dp"
                             android:paddingBottom="3dp"
-                            android:text="Adverb"
+                            android:text="@string/adverb"
                             android:textColor="#8A000000"
                             android:textSize="20sp" />
 
@@ -110,7 +110,7 @@
                             android:gravity="center_horizontal"
                             android:paddingTop="3dp"
                             android:paddingBottom="3dp"
-                            android:text="Conjunction"
+                            android:text="@string/conjunction"
                             android:textColor="#8A000000"
                             android:textSize="20sp" />
 
@@ -136,7 +136,7 @@
                             android:gravity="center_horizontal"
                             android:paddingTop="3dp"
                             android:paddingBottom="3dp"
-                            android:text="Verb"
+                            android:text="@string/verb"
                             android:textColor="#8A000000"
                             android:textSize="20sp" />
 
@@ -152,7 +152,7 @@
                             android:gravity="center_horizontal"
                             android:paddingTop="3dp"
                             android:paddingBottom="3dp"
-                            android:text="Pronoun"
+                            android:text="@string/pronoun"
                             android:textColor="#8A000000"
                             android:textSize="20sp" />
 
@@ -168,7 +168,7 @@
                             android:gravity="center_horizontal"
                             android:paddingTop="3dp"
                             android:paddingBottom="3dp"
-                            android:text="Preposition"
+                            android:text="@string/preposition"
                             android:textColor="#8A000000"
                             android:textSize="20sp" />
 
@@ -184,7 +184,7 @@
                             android:gravity="center_horizontal"
                             android:paddingTop="3dp"
                             android:paddingBottom="3dp"
-                            android:text="Interjection"
+                            android:text="@string/interjection"
                             android:textColor="#8A000000"
                             android:textSize="20sp" />
 
@@ -213,7 +213,7 @@
                             android:paddingTop="3dp"
                             android:paddingEnd="35dp"
                             android:paddingBottom="3dp"
-                            android:text="Noun"
+                            android:text="@string/noun"
                             android:textColor="#8A000000"
                             android:textSize="20sp" />
                     </RadioGroup>
@@ -243,7 +243,7 @@
                         android:gravity="center_horizontal"
                         android:paddingTop="3dp"
                         android:paddingBottom="3dp"
-                        android:text="Masculine"
+                        android:text="@string/masculine"
                         android:textColor="#B6B6B6"
                         android:textSize="20sp" />
 
@@ -261,7 +261,7 @@
                         android:gravity="center_horizontal"
                         android:paddingTop="3dp"
                         android:paddingBottom="3dp"
-                        android:text="Feminine"
+                        android:text="@string/feminine"
                         android:textColor="#B6B6B6"
                         android:textSize="20sp" />
                 </RadioGroup>
@@ -273,7 +273,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:background="@drawable/et_style"
-                android:hint="Meaning"
+                android:hint="@string/meaning"
                 android:inputType="textMultiLine"
                 android:maxLines="3"
                 android:minLines="2"
@@ -290,7 +290,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:background="@drawable/et_style"
-                android:hint="Usage"
+                android:hint="@string/usage"
                 android:inputType="textMultiLine|textCapSentences"
                 android:maxLines="3"
                 android:minLines="2"

@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements WordAdapter.ItemC
     DBHandler dbHandler;
 
     RecyclerView recyclerView;
-    RecyclerView.Adapter myAdapter;
+    WordAdapter myAdapter;
     RecyclerView.LayoutManager layoutManager;
 
     List<Word> words;
@@ -83,7 +83,8 @@ public class MainActivity extends AppCompatActivity implements WordAdapter.ItemC
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_about) {
+            startActivity(new Intent(this, About.class));
             return true;
         }
 
@@ -96,10 +97,7 @@ public class MainActivity extends AppCompatActivity implements WordAdapter.ItemC
 
         words.clear();
         words = dbHandler.getAllWords();
-
-        myAdapter = new WordAdapter(this, (ArrayList<Word>) words);
-
-        recyclerView.setAdapter(myAdapter);
+        myAdapter.listChanged(words);
     }
 
     @Override

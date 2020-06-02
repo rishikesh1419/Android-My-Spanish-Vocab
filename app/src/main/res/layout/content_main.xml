@@ -9,18 +9,9 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <EditText
-        android:id="@+id/searchTv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="7dp"
-        android:padding="5dp"
-        android:textSize="20sp"
-        android:background="@drawable/et_style"
-        android:hint="Search" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/wordsRv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:paddingTop="5dp"/>
 </LinearLayout>
