@@ -20,21 +20,23 @@
                 android:id="@+id/wordEt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Word"
-                android:background="@drawable/et_style"
-                android:padding="5dp"
                 android:layout_margin="5dp"
+                android:background="@drawable/et_style"
+                android:hint="Word"
                 android:inputType="textPersonName"
-                android:textSize="20sp"
-                />
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp"
+                android:textSize="20sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_margin="5dp"
                 android:background="@drawable/et_style"
-                android:padding="5dp"
-                android:layout_margin="5dp" >
+                android:orientation="vertical"
+                android:padding="5dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -195,20 +197,27 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal">
 
-                    <RadioButton
-                        android:id="@+id/nounRb"
+                    <RadioGroup
+                        android:id="@+id/rg3"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/custom_button_bg"
-                        android:button="@android:color/transparent"
-                        android:paddingStart="35dp"
-                        android:paddingTop="3dp"
-                        android:paddingEnd="35dp"
-                        android:paddingBottom="3dp"
-                        android:text="Noun"
-                        android:textColor="@android:color/secondary_text_dark"
-                        android:textSize="20sp" />
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/nounRb"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/custom_button_bg"
+                            android:button="@android:color/transparent"
+                            android:paddingStart="35dp"
+                            android:paddingTop="3dp"
+                            android:paddingEnd="35dp"
+                            android:paddingBottom="3dp"
+                            android:text="Noun"
+                            android:textColor="#8A000000"
+                            android:textSize="20sp" />
+                    </RadioGroup>
+
                 </LinearLayout>
 
                 <RadioGroup
@@ -217,11 +226,11 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:orientation="horizontal"
-                    android:weightSum="2"
-                    android:paddingBottom="5dp">
+                    android:paddingBottom="5dp"
+                    android:weightSum="2">
 
                     <RadioButton
-                        android:id="@+id/muscularRb"
+                        android:id="@+id/masculineRb"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="14dp"
@@ -234,7 +243,8 @@
                         android:gravity="center_horizontal"
                         android:paddingTop="3dp"
                         android:paddingBottom="3dp"
-                        android:text="Muscular"
+                        android:text="Masculine"
+                        android:textColor="#B6B6B6"
                         android:textSize="20sp" />
 
                     <RadioButton
@@ -252,31 +262,42 @@
                         android:paddingTop="3dp"
                         android:paddingBottom="3dp"
                         android:text="Feminine"
+                        android:textColor="#B6B6B6"
                         android:textSize="20sp" />
                 </RadioGroup>
             </LinearLayout>
+
             <EditText
                 android:id="@+id/meaningEt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Meaning"
-                android:inputType="textPersonName"
-                android:background="@drawable/et_style"
-                android:padding="5dp"
                 android:layout_margin="5dp"
+                android:background="@drawable/et_style"
+                android:hint="Meaning"
+                android:inputType="textMultiLine"
+                android:maxLines="3"
+                android:minLines="2"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp"
+                android:scrollbars="vertical"
                 android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/usageEt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/et_style"
                 android:hint="Usage"
-                android:inputType="textMultiLine"
+                android:inputType="textMultiLine|textCapSentences"
                 android:maxLines="3"
                 android:minLines="2"
-                android:background="@drawable/et_style"
-                android:padding="5dp"
-                android:layout_margin="5dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp"
                 android:scrollbars="vertical"
                 android:textSize="20sp" />
 

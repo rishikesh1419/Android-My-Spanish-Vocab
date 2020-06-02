@@ -110,6 +110,7 @@ public class MainActivity extends AppCompatActivity implements WordAdapter.ItemC
         Gson gson = new Gson();
         String word = gson.toJson(words.get(position));
         intent.putExtra("details", word);
+//        intent.putExtra("id", position);
         startActivity(intent);
     }
 }

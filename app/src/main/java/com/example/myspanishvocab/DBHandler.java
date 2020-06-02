@@ -79,11 +79,18 @@ public class DBHandler extends SQLiteOpenHelper {
                 null, null, null, null
         );
 
+//        Cursor cursor = db.query(WORDS_TABLE,
+//                new String[] {ID, WORD, POS, GENDER, MEANING, USAGE, NORM},
+//                "ID=?",
+//                new String[] {String.valueOf(id)},
+//                null, null, null
+//                );
+
         Word word;
 
         if(cursor != null) {
             cursor.moveToFirst();
-            word = new Word(Integer.parseInt(cursor.getString(0)),
+            word = new Word(Integer.parseInt(String.valueOf(cursor.getInt(0))),
                     cursor.getString(1),
                     cursor.getString(2),
                     cursor.getString(3),

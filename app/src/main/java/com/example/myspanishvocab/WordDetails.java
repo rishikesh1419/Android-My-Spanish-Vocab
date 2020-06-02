@@ -21,6 +21,7 @@ public class WordDetails extends AppCompatActivity {
 
     TextView wordTv, usageTv, meaningTv, typeTv;
     Word word;
+    int id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +40,7 @@ public class WordDetails extends AppCompatActivity {
 
         Intent intent = getIntent();
         String details = intent.getStringExtra("details");
-
+//        id = intent.getIntExtra("id", 0);
         Gson gson = new Gson();
         word = gson.fromJson(details, Word.class);
 
@@ -57,8 +58,9 @@ public class WordDetails extends AppCompatActivity {
         fabEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent1 = new Intent(WordDetails.this, com.example.myspanishvocab.EditWord.class);
+                intent1.putExtra("id", id);
+                startActivity(intent1);
             }
         });
 
@@ -72,4 +74,27 @@ public class WordDetails extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+//        int id = getIntent().getIntExtra("id", 0);
+        id = word.getId();
+
+        word = dbHandler.getWord(id);
+        wordTv.setText("");
+        meaningTv.setText("");
+        usageTv.setText("");
+        typeTv.setText("");
+
+        wordTv.setText(word.getWord());
+        meaningTv.setText(word.getMeaning());
+        usageTv.setText(word.getUsage());
+        if(word.getGender().equals("None")) {
+            typeTv.setText(word.getPos());
+        }
+        else {
+            typeTv.setText(String.format("%s, %s", word.getPos(), word.getGender()));
+        }
+    }
 }
