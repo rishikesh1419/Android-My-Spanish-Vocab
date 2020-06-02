@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity implements WordAdapter.ItemC
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show();
                 Intent intent = new Intent(MainActivity.this, com.example.myspanishvocab.AddWord.class);
                 startActivity(intent);
             }
@@ -61,7 +60,6 @@ public class MainActivity extends AppCompatActivity implements WordAdapter.ItemC
 
         words = new ArrayList<Word>();
         words = dbHandler.getAllWords();
-//        Toast.makeText(MainActivity.this, String.valueOf(words.size()), Toast.LENGTH_SHORT).show();
 
         myAdapter = new WordAdapter(this, (ArrayList<Word>) words);
 
